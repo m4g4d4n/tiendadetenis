@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>deportes flores</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        section {
+            padding: 100px;
+            text-align: center;
+            left: 30px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            
+            width: 100%;
+            bottom: 0;
+        }
+        .card {
+            background: white;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel {
+            position: relative;
+            max-width: 50%;
+            margin: auto;
+            overflow: hidden;
+        }
+        .carousel img {
+            width: 100%;
+            
+            
+        }
+        .carousel .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel .slide {
+            min-width: 100%;
+        }
+        .carousel .prev, .carousel .next {
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            border-radius: 0 3px 3px 0;
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.5);
+            user-select: none;
+        }
+        .carousel .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        .carousel .prev:hover, .carousel .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>DEPORTES FLORES</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="sobrenosostros.html">Sobre Nosotros</a></li>
+                <li><a href="jugadores.html">Jugadores</a></li>
+                <li><a href="partidos.html">Partidos</a></li>
+                <li><a href="noticias.html">Noticias</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="carousel">
+        <div class="slides">
+            <div class="slide"><img src="https://th.bing.com/th/id/OIP.5Ri54jvvthYMLBYiX06tSAAAAA?rs=1&pid=ImgDetMain" alt="Slide 1"></div>
+            <div class="slide"><img src="https://th.bing.com/th/id/OIP.hKYQacd1YlQcdngQ2N0jwAHaFk?rs=1&pid=ImgDetMain" alt="Slide 2"></div>
+            <div class="slide"><img src="https://th.bing.com/th/id/OIP.5ZjwaVziKHV85DAT1OJmLAHaHa?rs=1&pid=ImgDetMain" alt="Slide 3"></div>
+            <div class="slide"><img src="https://th.bing.com/th/id/OIP.tffi_ZDm8RL9Yf7EN-RFyAHaHa?w=1000&h=1000&rs=1&pid=ImgDetMain" alt="Slide 4"></div>
+            <div class="slide"><img src="https://th.bing.com/th/id/OIP.YE7oBfsCSquBveiSfEL8YQHaHa?rs=1&pid=ImgDetMain" alt="Slide 5"></div>
+            <div class="slide"><img src="https://th.bing.com/th/id/OIP.ZyPWkzbz4NhIMtdW9lqSBAHaHa?rs=1&pid=ImgDetMain" alt="Slide 6"></div>
+            
+        </div>
+        <a class="prev" onclick="prevSlide()">&#10094;</a>
+        <a class="next" onclick="nextSlide()">&#10095;</a>
+    </div>
+    
+    <section>
+        <h2>Bienvenido a deportes flores</h2>
+        <p>Descubre todo sobre nuestra tienda online y todos los productos que Ofrecemos sobre nuestros productos del mercado.</p>
+
+        <div class="card">
+            <h3>Últimos lanzamientos</h3>
+            <p>Consulta los nuevos lazamientos en el mercado mundial.</p>
+            <img src="https://th.bing.com/th/id/OIP.DNE2RkPF6ku7Z21iMRLbbwHaHa?rs=1&pid=ImgDetMain" class="img" alt="Partido de Tenis de Fútbol"> 
+        </div>
+
+        <div class="card">
+            <h3>Conoce a los Jugadores</h3>
+            <p>Descubre quiénes son los talentos detrás del club y sus historias.</p>
+            <img src="../emiliano.mbappe.jpg" class="img" alt="Jugadores de Tenis de Fútbol"> 
+            <p></p>
+        </div>
+    </section>
+      
+
+
+
+
+   
+</body>
+
+<script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        const slides = document.querySelectorAll('.slide');
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) { slideIndex = 1; }
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 3000); // Cambia de imagen cada 3 segundos
+    }
+
+    function prevSlide() {
+        slideIndex -= 2;
+        showSlides();
+    }
+
+    function nextSlide() {
+        showSlides();
+    }
+</script>
+
+
+<div class="container">
+    <h2>Productos</h2>
+    <div class="products">
+        <div class="product">
+            <img src="https://th.bing.com/th/id/OIP.kcC8N6k9a9DKmih090PVtgAAAA?rs=1&pid=ImgDetMain" alt="Producto 1">
+            <h3>Product 1</h3>
+            <p>adidas predator color green</p>
+            <p><strong>$6,750</strong></p>
+        </div>
+        <div class="product">
+            <img src="https://www.footballbootsdb.com/es/logos/boots/2024/01/65a6746367db3.jpg" alt="Producto 2">
+            <h3>Product</h3>
+            <p>adidas predator 2024 edition bellingham</p>
+            <p><strong>$9,230</strong></p>
+        </div>
+        <div class="product">
+            <img src="https://th.bing.com/th/id/OIP.fKR_kYi-TICv56awje8XbQAAAA?rs=1&pid=ImgDetMain" alt="Producto 3">
+            <h3>Product</h3>
+            <p>adidas predator 24 red pack.</p>
+            <p><strong>$7,483</strong></p>
+        </div>
+        <div class="product">
+            <img src="https://www.footballbootsdb.com/logos/boots/2023/12/6572234f30f8f.jpg" alt="Producto 4">
+            <h3>Product</h3>
+            <p>adidas predator 24 red pack.</p>
+            <p><strong>$7,500</strong></p>
+        </div>
+        <div class="product">
+            <img src="https://www.footballbootsdb.com/logos/boots/2024/06/665da5a77efa0.jpg" alt="Producto 5">
+            <h3>Product</h3>
+            <p>adidas predator 24 blue pack</p>
+            <p><strong>$5,600</strong></p>
+        </div>
+        <div class="product">
+            <img src="https://www.footballbootsdb.com/logos/boots/2024/04/660adc05f1285.jpg" alt="Producto 6">
+            <h3>Product</h3>
+            <p>adidas crazyfast red color.</p>
+            <p><strong>$6,800</strong></p>
+        </div>
+    
+       
+    </div>
+</div>
+<footer>
+    <p>&copy; 2024 deportes flores. Todos los derechos reservados.</p>
+</footer>
+</html>
+
+
+<style>
+      
+.img{
+    width: 250px;
+    height: 250px;
+}
+
+
+      .carousel .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        .carousel .prev:hover, .carousel .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        .container {
+            padding: 20px;
+        }
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .product {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            text-align: center;
+            width: calc(33.333% - 20px);
+            box-sizing: border-box;
+          
+        }
+        .product img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        .product h3 {
+            margin: 10px 0 5px;
+        }
+        .product p {
+            margin: 5px 0;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            
+            bottom: 0;
+            width: 100%;
+        }
+
+
+
+
+</style>
+
+
+
